@@ -16,13 +16,13 @@ function _zsh_zellij_plugin_run() {
   local -a zellij_cmd
   zellij_cmd=(command zellij)
 
-  [[ "$ZSH_ZELLIJ_AUTOCONNECT" ]] && $zellij_cmd attach -c
+  [[ -z "$ZELLIJ" && "$ZSH_ZELLIJ_AUTOCONNECT" ]] && $zellij_cmd attach -c
 
   if [[ $? -ne 0 ]]; then
     $zellij_cmd
   fi
 
-  if [[ "$ZSH_ZELLIJ_AUTOQUIT" == true ]]; then
+  if [[ -z "$ZELLIJ" && "$ZSH_ZELLIJ_AUTOQUIT" == true ]]; then
     exit
   fi
 }
