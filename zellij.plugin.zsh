@@ -16,9 +16,17 @@ function _zsh_zellij_plugin_run() {
   local -a zellij_cmd
   zellij_cmd=(command zellij)
 
-  [[ -z "$ZELLIJ" && "$ZSH_ZELLIJ_AUTOCONNECT" ]] && $zellij_cmd attach -c
+  [[ -z "$ZELLIJ" && "$ZSH_ZELLIJ_AUTOCONNECT" ]] && $zellij_cmd attach
 
   if [[ $? -ne 0 ]]; then
+    if [[ -n "$ZSH_ZELLIJ_LAYOUT" ]]; then
+      zellij_cmd+=(-l "$ZSH_ZELLIJ_LAYOUT")
+    fi
+
+    if [[ -n "$ZSH_ZELLIJ_LAYOUT_PATH" ]]; then
+      zellij_cmd+=(--layout-path "$ZSH_ZELLIJ_LAYOUT_PATH")
+    fi
+
     $zellij_cmd
   fi
 

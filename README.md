@@ -44,6 +44,10 @@ plugins=(
 | `ZSH_ZELLIJ_AUTOSTART`   | Automatically starts zellij (default: `false`)                                    |
 | `ZSH_ZELLIJ_AUTOCONNECT` | Automatically connect to a previous session if it exits (default: `true`)         |
 | `ZSH_ZELLIJ_AUTOQUIT`    | Automatically closes terminal once zellij exits (default: `ZSH_ZELLIJ_AUTOSTART`) |
+| `ZSH_ZELLIJ_LAYOUT`      | Set the default layout file in the layout directory                               |
+| `ZSH_ZELLIJ_LAYOUT_PATH` | Set the default path of layout yaml file                                          |
+
+When `ZSH_ZELLIJ_LAYOUT` and `ZSH_ZELLIJ_LAYOUT_PATH` are used together, `LAYOUT` has priority.
 
 ## License
 
