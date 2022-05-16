@@ -4,6 +4,8 @@ This plugin provides a terminal environment that uses [zellij](https://github.co
 
 Most of the contents refer to [oh-my-zsh/tmux](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux). Thank you so much :smile:
 
+**NOTICE: Zellij now provides its own auto start script. Check the official [documentation](https://zellij.dev/documentation/integration.html#autostart-on-shell-creation) for details. **
+
 ## Installation
 
 ### Manual
